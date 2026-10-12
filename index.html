@@ -70,8 +70,8 @@
 
         .nav-cta {
             padding: 10px 24px;
-            background: var(--negro);
-            color: var(--blanco);
+            background: var(--beige);
+            color: var(--negro);
             border-radius: 30px;
             text-decoration: none;
             font-size: 0.85rem;
@@ -89,8 +89,8 @@
             justify-content: center;
             padding: 120px 24px 80px;
             background:
-                linear-gradient(180deg, rgba(244,241,235,0.9) 0%, rgba(244,241,235,0.7) 100%),
-                url('assets/foto hero TANTO.jpg') center/cover no-repeat;
+                linear-gradient(180deg, rgba(244,241,235,0.7) 0%, rgba(244,241,235,0.4) 100%),
+                url('assets/fondo-inicio-tanto.jpg') center/cover no-repeat;
             position: relative;
         }
 
@@ -147,8 +147,8 @@
 
         .btn-primary {
             padding: 16px 36px;
-            background: var(--negro);
-            color: var(--blanco);
+            background: var(--beige);
+            color: var(--negro);
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -172,8 +172,8 @@
         }
 
         .btn-secondary:hover {
-            background: var(--negro);
-            color: var(--blanco);
+            background: var(--beige);
+            color: var(--negro);
         }
 
         /* QUOTE */
@@ -241,14 +241,14 @@
         /* PHOTOS GRID */
         .photos {
             padding: 80px 0;
-            background: var(--negro);
+            background: var(--beige);
         }
 
         .photos h2 {
             padding: 0 24px;
             font-size: 1.5rem;
             margin-bottom: 30px;
-            color: var(--blanco);
+            color: var(--negro);
         }
 
         .photos-grid {
@@ -290,6 +290,14 @@
             gap: 16px;
             max-width: 700px;
             margin: 0 auto;
+        }
+        .esencia-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
 
         .what-item {
@@ -401,13 +409,13 @@
         /* CTA */
         .cta {
             padding: 100px 24px;
-            background: var(--negro);
+            background: var(--beige);
             text-align: center;
         }
 
         .cta h2 {
             font-size: 2.5rem;
-            color: var(--blanco);
+            color: var(--negro);
             margin-bottom: 16px;
         }
 
@@ -419,7 +427,7 @@
         /* FOOTER */
         footer {
             padding: 60px 24px 40px;
-            background: var(--negro);
+            background: var(--beige);
             border-top: 1px solid #222;
             text-align: center;
         }
@@ -427,7 +435,7 @@
         .footer-logo {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--blanco);
+            color: var(--negro);
             margin-bottom: 20px;
         }
 
@@ -453,7 +461,7 @@
             transition: color 0.3s;
         }
 
-        .footer-links a:hover { color: var(--blanco); }
+        .footer-links a:hover { color: var(--negro); }
 
         .footer-social {
             display: flex;
@@ -470,7 +478,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--blanco);
+            color: var(--negro);
             text-decoration: none;
             font-size: 1.2rem;
             transition: all 0.3s;
@@ -485,9 +493,239 @@
             font-size: 0.8rem;
         }
 
+
+        .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { text-decoration: none; color: var(--negro); font-size: 0.9rem; font-weight: 500; transition: all 0.3s; display: flex; align-items: center; gap: 6px; }
+        .footer-links a:hover { color: var(--marron); }
+        .contact-dropdown { position: relative; display: inline-block; }
+        .contact-dropdown-content { display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--beige); border-radius: 12px; padding: 12px 16px; min-width: 160px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); z-index: 1000; }
+        .contact-dropdown:hover .contact-dropdown-content { display: flex; flex-direction: column; gap: 8px; }
+        .contact-dropdown-content a { color: var(--negro); font-size: 0.85rem; padding: 8px 12px; border-radius: 8px; }
+        .contact-dropdown-content a:hover { background: rgba(0,0,0,0.1); }
+
+
+        /* COLLAPSE HISTORIA */
+        .historia-trigger {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 10px;
+            padding: 12px 24px;
+            background: var(--beige);
+            border: 2px solid var(--marron);
+            border-radius: 30px;
+            color: var(--negro);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .historia-trigger:hover {
+            background: var(--marron);
+            color: var(--blanco);
+        }
+        .historia-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .historia-trigger.active + .historia-content {
+            max-height: 5000px;
+        }
+        .perfil-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 20px 0;
+        }
+        .perfil-foto {
+            flex-shrink: 0;
+        }
+        .perfil-texto {
+            flex: 1;
+            text-align: center;
+        }
+        .perfil-texto h3 {
+            margin-bottom: 20px;
+        }
+        .perfil-texto blockquote {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .perfil-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .perfil-foto img {
+                width: 200px !important;
+                height: 200px !important;
+            }
+        }
+        .quien-esta > h3 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .quien-esta > div {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 30px;
+            width: 100%;
+            justify-content: center;
+        }
+        .quien-esta-foto {
+            flex-shrink: 0;
+        }
+        .quien-esta-texto {
+            flex: 1;
+            text-align: left;
+            max-width: 500px;
+        }
+        @media (max-width: 700px) {
+            .quien-esta > div {
+                flex-direction: column;
+                align-items: center;
+            }
+            .quien-esta-texto {
+                text-align: center;
+            }
+        }
+
+
+
+        /* HAMBURGER MENU */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 20px;
+            cursor: pointer;
+            padding: 0;
+            background: none;
+            border: none;
+        }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: var(--negro);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .nav-links { display: flex; gap: 24px; }
+        .nav-links a { color: var(--negro); text-decoration: none; font-size: 0.9rem; font-weight: 500; opacity: 0.7; transition: opacity 0.3s; }
+        .nav-links a:hover { opacity: 1; }
+        .nav-dropdown { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(244,241,235,0.98); backdrop-filter: blur(10px); flex-direction: column; padding: 20px; gap: 16px; border-top: 1px solid rgba(0,0,0,0.1); }
+        .nav-dropdown.active { display: flex; }
+        .nav-dropdown a { font-size: 1rem; opacity: 1; }
+
+
+
+
+        /* MOMENTS */
+        .moments-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 0 24px;
+        }
+        .moment-bubble {
+            aspect-ratio: 1;
+            border-radius: 50% 45% 50% 45%;
+            border: 3px solid var(--naranja);
+            background: linear-gradient(135deg, var(--beige) 0%, #d4c9b8 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .moment-bubble:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(224, 123, 57, 0.3);
+        }
+        .moment-bubble img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+        .moment-bubble h3 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--negro);
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            position: relative;
+            z-index: 1;
+            line-height: 1.2;
+        }
+        .moment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .moment-modal.active { display: flex; }
+        .moment-modal-content {
+            background: var(--crema);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        .moment-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--negro);
+        }
+        .moment-modal h2 { color: var(--naranja); margin-bottom: 20px; }
+        .moment-modal p { color: #666; }
+
+        @media (max-width: 768px) {
+            .moments-grid { grid-template-columns: repeat(2, 1fr); }
+            .moment-bubble h3 { font-size: 0.65rem; }
+        }
+
+
         /* RESPONSIVE */
         @media (max-width: 600px) {
+            .hamburger { display: flex; }
             .nav-links { display: none; }
+            .nav-right { display: flex; align-items: center; gap: 0; flex: 1; justify-content: space-between; }
+            .nav-dropdown { left: 24px; right: 24px; text-align: center; }
             .photos-grid { grid-template-columns: repeat(2, 1fr); }
             .photo-item:first-child { grid-column: span 2; }
             .photo-item:nth-child(4) { grid-column: span 2; }
@@ -498,11 +736,17 @@
     <!-- NAV -->
     <nav>
         <div class="nav-logo">TANTO</div>
-        <div class="nav-links">
-            <a href="#historia">Historia</a>
-            <a href="#experiencias">Experiencias</a>
-        </div>
+        <button class="hamburger" onclick="this.classList.toggle('active'); document.getElementById('navDropdown').classList.toggle('active');">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <a href="#sumate" class="nav-cta">Únete</a>
+        <div class="nav-dropdown" id="navDropdown">
+            <a href="#historia" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">De dónde nace TANTO</a>
+            <a href="#experiencias" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">Experiencias</a>
+            <a href="#sumate" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">Únete</a>
+        </div>
     </nav>
 
     <!-- HERO -->
@@ -521,13 +765,46 @@
 
     <!-- CONCEPTO -->
     <section class="quote" id="concepto">
-        <blockquote>
-            TANTO es todo lo que el deporte te da…<br>
-            y muchas veces no sabes explicar.
-        </blockquote>
-        <p class="concepto-sub">Tanto por vivir. Tanto por sentir. Tanto por compartir.</p>
-        <p class="concepto-final">No es rendimiento.<br>Es conexión.</p>
+        <div class="concepto-pages">
+            <div class="concepto-page active" id="conceptoPage1">
+                <blockquote>
+                    TANTO es todo lo que el deporte te da…<br>
+                    y muchas veces no sabes explicar.
+                </blockquote>
+                <p class="concepto-sub">Tanto por vivir. Tanto por sentir. Tanto por compartir.</p>
+                <p class="concepto-final">No es rendimiento.<br>Es conexión.</p>
+            </div>
+            <div class="concepto-page" id="conceptoPage2">
+                <blockquote style="font-style: italic;">
+                    "Hay algo aquí<br>que no se explica, se vive"
+                </blockquote>
+                <p style="text-align: right; margin-top: 20px; font-weight: 600;">— TANTO</p>
+            </div>
+            <div class="concepto-flip" onclick="flipConcepto()">
+                <span id="flipIcon">📖</span> Descubre más
+            </div>
+        </div>
     </section>
+
+    <style>
+        .concepto-pages { position: relative; min-height: 280px; }
+        .concepto-page { display: none; text-align: center; }
+        .concepto-page.active { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .concepto-flip { display: inline-block; margin-top: 30px; cursor: pointer; padding: 12px 24px; border: 2px solid var(--marron); border-radius: 30px; font-size: 0.85rem; color: var(--negro); opacity: 0.8; transition: all 0.3s; }
+        .concepto-flip:hover { opacity: 1; background: var(--marron); color: var(--blanco); }
+    </style>
+
+    <script>
+    let pageFlipped = false;
+    function flipConcepto() {
+        document.getElementById('conceptoPage1').classList.toggle('active');
+        document.getElementById('conceptoPage2').classList.toggle('active');
+        document.getElementById('flipIcon').textContent = pageFlipped ? '📖' : '🔄';
+        document.querySelector('.concepto-flip').childNodes[2].textContent = pageFlipped ? ' Descubre más' : ' Volver';
+        pageFlipped = !pageFlipped;
+    }
+    </script>
 
     <!-- THREE CARDS -->
     <section class="three-cards">
@@ -550,45 +827,84 @@
         </div>
     </section>
 
-    <!-- PHOTOS -->
-    <section class="photos">
-        <h2>Los momentos</h2>
-        <div class="photos-grid">
-            <div class="photo-item"><img src="../assets/IMG_3514.PNG" alt=""></div>
-            <div class="photo-item"><img src="../assets/IMG_3515.PNG" alt=""></div>
-            <div class="photo-item"><img src="../assets/IMG_3516.PNG" alt=""></div>
-            <div class="photo-item"><img src="../assets/IMG_3517.PNG" alt=""></div>
-            <div class="photo-item"><img src="../assets/IMG_3518.PNG" alt=""></div>
-            <div class="photo-item"><img src="../assets/IMG_3519.PNG" alt=""></div>
-            <div class="photo-item"><img src="../assets/IMG_3521.PNG" alt=""></div>
-            <div class="photo-item"><img src="../assets/IMG_3525.PNG" alt=""></div>
-            <div class="photo-item"><img src="../assets/IMG_3529.PNG" alt=""></div>
+    <!-- MOMENTS -->
+    <section class="moments" id="momentos" style="padding: 80px 0; background: var(--beige);">
+        <h2 class="moments-title" style="text-align: center; font-size: 2rem; font-weight: 700; letter-spacing: 3px; margin-bottom: 40px;">MOMENTOS</h2>
+        <div class="moments-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; padding: 0 24px;">
+            <div class="moment-bubble" onclick="openMoment('BENISSA EXPERIENCE 4 DAYS')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/benissa experience 4 days.jpg') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">BENISSA EXPERIENCE<br>4 DAYS</h3></div>
+            <!-- SUNSET RIDE OIZ -->
+            <div class="moment-bubble" onclick="openMoment('SUNSET RIDE OIZ')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/sunset ride oiz.jpg') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">SUNSET RIDE<br>OIZ</h3></div>
+            <!-- AMANECER OIZ -->
+            <div class="moment-bubble" onclick="openMoment('AMANECER OIZ')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/amanecer oiz.PNG') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">AMANECER<br>OIZ</h3></div>
+            <!-- MEDITACIONES -->
+            <div class="moment-bubble" onclick="openMoment('MEDITACIONES')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/meditaciones.jpg') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">MEDITACIONES</h3></div>
+            <div class="moment-bubble" onclick="openMoment('YOGA')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><img src="assets/yoga.jpg" alt="YOGA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top;"><h3 style="position: relative; z-index: 1; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">YOGA</h3></div>
+            <!-- SENDERISMO -->
+            <div class="moment-bubble" onclick="openMoment('SENDERISMO')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/senderismo.jpg') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">SENDERISMO</h3></div>
+            <div class="moment-bubble" onclick="openMoment('CYCLING')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/cycling.jpg') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">CYCLING</h3></div>
+            <!-- FAMILIA -->
+            <div class="moment-bubble" onclick="openMoment('FAMILIA')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/familia.jpg') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">FAMILIA</h3></div>
+            <div class="moment-bubble" onclick="openMoment('RETOS')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/retos.jpg') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">RETOS</h3></div>
+            <!-- NATURALEZA -->
+            <div class="moment-bubble" onclick="openMoment('NATURALEZA')" style="aspect-ratio: 1; border-radius: 50% 45% 50% 45%; border: none; background: url('assets/naturaleza.jpg') center/cover no-repeat var(--naranja); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px; cursor: pointer; transition: all 0.3s; box-shadow: inset 0 0 30px rgba(0,0,0,0.3);"><h3 style="font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">NATURALEZA</h3></div>
         </div>
     </section>
+
+    <!-- MOMENT MODAL -->
+    <div class="moment-modal" id="momentModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.9); z-index: 2000; align-items: center; justify-content: center; flex-direction: column; padding: 20px;">
+        <div class="moment-modal-content" style="background: var(--crema); border-radius: 20px; padding: 30px; max-width: 600px; width: 100%; text-align: center; position: relative;">
+            <span class="moment-modal-close" onclick="closeMoment()" style="position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--negro);">✕</span>
+            <h2 id="momentModalTitle" style="color: var(--naranja); margin-bottom: 20px;"></h2>
+            <p style="color: #666;">Contenido en construcción...</p>
+        </div>
+    </div>
+
+    
 
     <!-- WHAT IS -->
     <section class="what-is">
         <h2>La esencia</h2>
-        <div class="what-is-grid">
+        <div class="esencia-grid">
             <div class="what-item">
                 <span class="what-num">1</span>
                 <div class="what-content">
-                    <h3>Familia / Piña</h3>
-                    <p>Una piña no tiene partes separadas. Somos uno.</p>
+                    <h3>MOVIMIENTO</h3>
+                    <p>No es solo bici, es acción. Es salir, hacer, avanzar. El cuerpo como vehículo para cambiar la mente.</p>
+                </div>
+            </div>
+            <div class="what-item">
+                <span class="what-num">4</span>
+                <div class="what-content">
+                    <h3>SUPERACIÓN</h3>
+                    <p>No desde el sufrimiento vacío, sino desde el crecimiento. Ir un poco más allá cada día, físico y mental.</p>
                 </div>
             </div>
             <div class="what-item">
                 <span class="what-num">2</span>
                 <div class="what-content">
-                    <h3>Energía Limpia</h3>
-                    <p>Buena vibra. Gente que suma, no que resta.</p>
+                    <h3>ENERGÍA</h3>
+                    <p>Lo que transmites. Vitalidad real, no forzada. La gente conecta con cómo haces sentir, no con lo que dices.</p>
+                </div>
+            </div>
+            <div class="what-item">
+                <span class="what-num">5</span>
+                <div class="what-content">
+                    <h3>COMUNIDAD</h3>
+                    <p>"Tanto" no eres tú. Es crear algo donde la gente se sienta parte.</p>
                 </div>
             </div>
             <div class="what-item">
                 <span class="what-num">3</span>
                 <div class="what-content">
-                    <h3>Sin Exclusión</h3>
-                    <p>Cualquier edad. Cualquier nivel. Aquí cabemos todos.</p>
+                    <h3>AUTENTICIDAD</h3>
+                    <p>Sin postureo espiritual ni máscara perfecta. Mostrar proceso, dudas y evolución con naturalidad.</p>
+                </div>
+            </div>
+            <div class="what-item">
+                <span class="what-num">6</span>
+                <div class="what-content">
+                    <h3>DISFRUTE</h3>
+                    <p>Clave. Sin esto, todo cae. Entrenar, crear, vivir... pero desde el gusto, no desde la obligación.</p>
                 </div>
             </div>
         </div>
@@ -596,16 +912,28 @@
 
     <!-- HISTORIA -->
     <section class="quote" id="historia">
-        <h2 style="margin-bottom: 30px; font-size: 1.8rem;">De dónde nace TANTO</h2>
-        <blockquote style="font-size: 1.1rem; line-height: 1.8;">
-            TANTO nace de un momento personal difícil.
-        </blockquote>
-        <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">Hubo una etapa en la que no me sentía capaz de estar con gente. Necesité parar, alejarme y empezar a conocerme de verdad.</p>
-        <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">A través del deporte y del trabajo interno, algo empezó a cambiar.</p>
-        <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">Dejé de hacerlo para escapar… y empecé a hacerlo porque me hacía bien.</p>
-        <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">Empecé a compartirlo. Y cuanto más lo compartía, mejor me sentía.</p>
-        <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">Conocí gente. Me di cuenta de que, aunque cada uno esté en su momento, en el fondo no estamos tan separados.</p>
-        <p style="max-width: 700px; margin: 30px auto; font-weight: 600;">Y de ahí nace TANTO. Un espacio para moverte, sentirte bien y compartir sin presión.</p>
+        <button class="historia-trigger" onclick="this.classList.toggle('active'); this.textContent = this.classList.contains('active') ? '▲ Ocultar' : '▼ De dónde nace TANTO';">▼ De dónde nace TANTO</button>
+        <div class="historia-content">
+            <div class="perfil-section">
+                <div class="perfil-foto">
+                    <img src="assets/foto perfil beñat.jpg" alt="Beñat Cortázar" style="width: 300px; height: 300px; border-radius: 50%; border: 3px solid var(--naranja); object-fit: cover; object-position: center top; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+                </div>
+                <div class="perfil-texto">
+                    <h3 style="margin-bottom: 20px; font-size: 1.8rem; font-weight: 700;">Quién está detrás</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 12px;">Soy Beñat Cortázar, de Durango.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 12px;">El deporte siempre ha formado parte de mi vida, aunque durante mucho tiempo lo viví desde otro lugar.<br>Con el tiempo, cambió la forma de hacerlo… y ahí empezó el verdadero disfrute.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; font-weight: 600; margin-bottom: 30px;">Tanto nace desde ese punto.<br>Y sigue creciendo con cada persona que se suma.</p>
+                    <h3 style="margin-bottom: 20px; font-size: 1.8rem; font-weight: 700;">De dónde nace TANTO</h3>
+                    <blockquote style="font-size: 1.1rem; line-height: 1.8;">TANTO nace de un momento personal difícil.</blockquote>
+                    <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">Hubo una etapa en la que no me sentía capaz de estar con gente. Necesité parar, alejarme y empezar a conocerme de verdad.</p>
+                    <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">A través del deporte y del trabajo interno, algo empezó a cambiar.</p>
+                    <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">Dejé de hacerlo para escapar… y empecé a hacerlo porque me hacía bien.</p>
+                    <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">Empecé a compartirlo. Y cuanto más lo compartía, mejor me sentía.</p>
+                    <p style="max-width: 700px; margin: 20px auto; opacity: 0.8;">Conocí gente. Me di cuenta de que, aunque cada uno esté en su momento, en el fondo no estamos tan separados.</p>
+                    <p style="max-width: 700px; margin: 30px auto; font-weight: 600;">Y de ahí nace TANTO. Un espacio para moverte, sentirte bien y compartir sin presión.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- EXPERIENCES -->
@@ -614,27 +942,51 @@
         <p class="subtitle">Elige la tuya y súmate</p>
         <div class="exp-grid">
             <div class="exp-card">
-                <div class="exp-img"><img src="../assets/IMG_3519.PNG" alt=""></div>
+                <div class="exp-img"><img src="assets/exp_sr_new.jpg" alt="Social Ride" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
                 <div class="exp-content">
                     <span class="exp-tag">Social Ride</span>
-                    <h3>Ruta Social</h3>
+                    <h3></h3>
                     <p>Ruta en bici a ritmo accesible. Parada de café. Sin prisa.</p>
                 </div>
             </div>
             <div class="exp-card">
-                <div class="exp-img"><img src="../assets/IMG_3521.PNG" alt=""></div>
+                <div class="exp-img"><img src="assets/exp_am_new.jpg" alt="AMANECER" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
                 <div class="exp-content">
-                    <span class="exp-tag">Especial</span>
-                    <h3>Amanecer / Atardecer</h3>
+                    <span class="exp-tag">AMANECER</span>
+                    <h3></h3>
                     <p>Experiencias en momentos únicos. Para recordar.</p>
                 </div>
             </div>
             <div class="exp-card">
-                <div class="exp-img"><img src="../assets/IMG_3525.PNG" alt=""></div>
+                <div class="exp-img"><img src="assets/exp_en_new.jpg" alt="ENERGÍA" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
                 <div class="exp-content">
-                    <span class="exp-tag">Experiencia</span>
-                    <h3>Movilidad + Energía</h3>
-                    <p>Movimiento + activación + comunidad.</p>
+                    <span class="exp-tag">ENERGÍA</span>
+                    <h3></h3>
+                    <p>Movilidad + respiración.</p>
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-img"><img src="assets/exp_atardecer.jpg" alt="ATARDECER" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
+                <div class="exp-content">
+                    <span class="exp-tag">ATARDECER</span>
+                    <h3></h3>
+                    <p>Experiencias en momentos únicos. Para recordar.</p>
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-img"><img src="assets/exp_se_new.jpg" alt="SENDERISMO" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
+                <div class="exp-content">
+                    <span class="exp-tag">SENDERISMO</span>
+                    <h3></h3>
+                    <p>Rutas por la montaña.</p>
+                </div>
+            </div>
+            <div class="exp-card">
+                <div class="exp-img"><img src="assets/exp_srun_new.jpg" alt="SOCIAL RUN" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
+                <div class="exp-content">
+                    <span class="exp-tag">SOCIAL RUN</span>
+                    <h3></h3>
+                    <p>Salir a correr sin prisa.</p>
                 </div>
             </div>
         </div>
@@ -644,7 +996,7 @@
     <section class="cta" id="sumate">
         <h2>¿Te sumas?</h2>
         <p>No importa tu edad, tu nivel ni tu experiencia.</p>
-        <a href="#" class="btn-primary">Únete a TANTO</a>
+        <a href="https://chat.whatsapp.com/BZKukKgdM05I71ZErbI70S?mode=gi_t" target="_blank" class="btn-primary">Únete a TANTO</a>
     </section>
 
     <!-- FOOTER -->
@@ -652,11 +1004,68 @@
         <div class="footer-logo">TANTO</div>
         <p class="frase-clave">Ser tanto. Estar tanto. Sentir tanto.<br>Para vivir tanto.</p>
         <div class="footer-links">
-            <a href="#">Instagram</a>
-            <a href="#">Strava</a>
-            <a href="#">Contacto</a>
+            <a href="https://www.instagram.com/tanto.cc/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> Instagram</a>
+            <a href="https://strava.app.link/4gkxOkldt2b" target="_blank">🏃 Strava</a>
+            <div class="contact-dropdown">
+                <a href="#">💬 Contacto ▼</a>
+                <div class="contact-dropdown-content">
+                    <a href="https://wa.me/34661377189" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+                    <a href="mailto:tantocommunity@gmail.com">✉️ Email</a>
+                </div>
+            </div>
         </div>
         <p class="footer-copy">© 2026 TANTO. We are one.</p>
     </footer>
+    <!-- MOMENT MODAL -->
+    <div class="moment-modal" id="momentModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.92); z-index: 2000; align-items: center; justify-content: center; flex-direction: column; padding: 20px; overflow-y: auto;">
+        <div class="moment-modal-content" style="background: var(--crema); border-radius: 20px; padding: 30px; max-width: 700px; width: 100%; text-align: center; position: relative; margin: auto;">
+            <span class="moment-modal-close" onclick="closeMoment()" style="position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer; color: var(--negro); z-index: 10;">✕</span>
+            <h2 id="momentModalTitle" style="color: var(--naranja); margin-bottom: 20px; font-size: 1.5rem;"></h2>
+            <div id="momentGallery" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;"></div>
+        </div>
+    </div>
+
+    <script>
+    var momentPhotos = {
+        'BENISSA EXPERIENCE 4 DAYS': [
+            'assets/momentos/benissa/file_303---6588cbb1-04a2-4dfc-b329-bb2da0122512.jpg',
+            'assets/momentos/benissa/file_305---895c5f2d-eddb-49b1-892d-a4d951c4e10f.jpg',
+            'assets/momentos/benissa/file_306---38f537bf-3e81-4a43-bf38-0e92df8c4475.jpg',
+            'assets/momentos/benissa/file_307---f79fc359-f89c-4eaa-978a-e4c1b6e11ad9.jpg',
+            'assets/momentos/benissa/file_308---8d98608b-4fa0-432b-81a6-935bb382be5d.jpg',
+            'assets/momentos/benissa/file_309---4e89e532-c4f5-44dd-a9f2-84c155786e95.jpg',
+            'assets/momentos/benissa/file_310---941bb351-e452-41d2-9ada-5f109fb54e3b.jpg',
+            'assets/momentos/benissa/file_311---f8a05c7c-f4ff-4cb1-8fc2-e8667dd8e5ff.jpg',
+            'assets/momentos/benissa/file_312---b00e85a5-a5fd-4bd7-a0da-b0b4436fc51e.jpg',
+            'assets/momentos/benissa/file_313---4cf1bddd-4b79-4e8b-bf4d-da1981fe4cca.jpg',
+            'assets/momentos/benissa/file_314---fb16f109-5885-4c4d-9dbc-e518a01a80b9.jpg',
+            'assets/momentos/benissa/file_315---a6d5e116-0abb-4776-bd35-7157309daff3.jpg',
+            'assets/momentos/benissa/file_316---358d048d-c751-483f-873b-1a10555044b1.jpg',
+            'assets/momentos/benissa/file_317---2a824711-6dc2-46e1-8a90-95c96957d968.jpg',
+            'assets/momentos/benissa/file_318---a457813d-1bea-4080-8030-5eefcc84163b.jpg'
+        ]
+    };
+
+    function openMoment(title) {
+        document.getElementById('momentModalTitle').textContent = title;
+        var gallery = document.getElementById('momentGallery');
+        gallery.innerHTML = '';
+        if (momentPhotos[title]) {
+            momentPhotos[title].forEach(function(photo) {
+                var img = document.createElement('img');
+                img.src = photo;
+                img.style.cssText = 'width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; cursor: pointer; transition: transform 0.3s;';
+                img.onclick = function() { this.style.transform = this.style.transform === 'scale(1.1)' ? 'scale(1)' : 'scale(1.1)'; };
+                gallery.appendChild(img);
+            });
+        } else {
+            gallery.innerHTML = '<p style="color: #999; grid-column: 1/-1; padding: 40px 0;">Fotos en preparacion...</p>';
+        }
+        document.getElementById('momentModal').style.display = 'flex';
+    }
+    function closeMoment() {
+        document.getElementById('momentModal').style.display = 'none';
+    }
+    </script>
 </body>
 </html>
