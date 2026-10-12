@@ -81,6 +81,82 @@
 
         .nav-cta:hover { background: var(--naranja); }
 
+        /* NAV COLLABS */
+        .nav-collabs {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex: 1;
+            justify-content: center;
+        }
+        .collab-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #999;
+            text-transform: uppercase;
+        }
+        .collab-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .collab-link:hover {
+            opacity: 1;
+        }
+        .collab-logo {
+            height: 35px;
+            width: auto;
+            object-fit: contain;
+        }
+        .collab-big {
+            height: 45px !important;
+        }
+        .collab-small {
+            height: 17px !important;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-collabs {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 8px 0;
+            }
+            .collab-label {
+                display: none;
+            }
+            .collab-logo {
+                height: 25px !important;
+            }
+            .collab-big {
+                height: 30px !important;
+            }
+            .collab-small {
+                height: 12px !important;
+            }
+            .hamburger {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links { display: none; }
+            .nav-right { display: flex; align-items: center; gap: 0; flex: 1; justify-content: space-between; }
+            .nav-dropdown { left: 24px; right: 24px; text-align: center; }
+            .photos-grid { grid-template-columns: repeat(2, 1fr); }
+            .photo-item:first-child { grid-column: span 2; }
+            .photo-item:nth-child(4) { grid-column: span 2; }
+        }
+
         /* HERO */
         .hero {
             min-height: 100vh;
@@ -736,16 +812,33 @@
     <!-- NAV -->
     <nav>
         <div class="nav-logo">TANTO</div>
-        <button class="hamburger" onclick="this.classList.toggle('active'); document.getElementById('navDropdown').classList.toggle('active');">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <a href="#sumate" class="nav-cta">Únete</a>
-        <div class="nav-dropdown" id="navDropdown">
-            <a href="#historia" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">De dónde nace TANTO</a>
-            <a href="#experiencias" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">Experiencias</a>
-            <a href="#sumate" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">Únete</a>
+        <div class="nav-collabs">
+            <div class="collab-label">COLABORADORES</div>
+            <a href="https://elorriagakirolak.com/" target="_blank" class="collab-link" title="Elorriaga Kirolak">
+                <img src="assets/elorriaga.jpg" alt="Elorriaga Kirolak" class="collab-logo collab-big">
+            </a>
+            <a href="https://crownsportnutrition.com/" target="_blank" class="collab-link" title="Crown Sport Nutrition">
+                <img src="assets/logo-crown.svg" alt="Crown Sport Nutrition" class="collab-logo">
+            </a>
+            <a href="https://tactic.cc/es" target="_blank" class="collab-link" title="Tactic">
+                <img src="assets/tactic.jpg" alt="Tactic" class="collab-logo collab-big">
+            </a>
+            <a href="https://www.focus-bikes.com/es_es/" target="_blank" class="collab-link" title="Focus Bikes">
+                <img src="assets/focus.png" alt="Focus Bikes" class="collab-logo collab-small">
+            </a>
+        </div>
+        <div class="nav-right">
+            <button class="hamburger" onclick="this.classList.toggle('active'); document.getElementById('navDropdown').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="#sumate" class="nav-cta">Únete</a>
+            <div class="nav-dropdown" id="navDropdown">
+                <a href="#historia" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">De dónde nace TANTO</a>
+                <a href="#experiencias" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">Experiencias</a>
+                <a href="#sumate" onclick="document.getElementById('navDropdown').classList.remove('active'); document.querySelector('.hamburger').classList.remove('active');">Únete</a>
+            </div>
         </div>
     </nav>
 
